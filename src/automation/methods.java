@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class methods {
 	
@@ -17,10 +18,18 @@ public class methods {
 	public static AndroidDriver driver;
 	static String email = "varunvishal08@gmail.com";
 	static String password = "Tour2810";
+	
+	AppiumDriverLocalService appiumService;
+    String appiumServiceUrl;
   
 	
 	@Test
 	public void installation() throws MalformedURLException {
+		
+		 appiumService = AppiumDriverLocalService.buildDefaultService();
+			appiumService.start();
+	        appiumServiceUrl = appiumService.getUrl().toString();
+	        System.out.println("Appium Service Address : - "+ appiumServiceUrl);
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "350df4d27d42");
