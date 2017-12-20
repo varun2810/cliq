@@ -55,7 +55,7 @@ public class Apptest1 {
 					 switch(testcase) {
 					 
 					 case "App installation":
-							System.out.println("testcase : " + testcase);									
+							System.out.println("testcase : " + testcase);						
 							obj.installation();					
 							Thread.sleep(3000);
 							//updateresult("//*[@id='lst-ib']",i);

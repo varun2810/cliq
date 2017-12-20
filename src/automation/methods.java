@@ -10,7 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class methods {
 	
@@ -18,22 +17,14 @@ public class methods {
 	public static AndroidDriver driver;
 	static String email = "varunvishal08@gmail.com";
 	static String password = "Tour2810";
-	
-	AppiumDriverLocalService appiumService;
-    String appiumServiceUrl;
-  
+	  
 	
 	@Test
 	public void installation() throws MalformedURLException {
-		
-		 appiumService = AppiumDriverLocalService.buildDefaultService();
-			appiumService.start();
-	        appiumServiceUrl = appiumService.getUrl().toString();
-	        System.out.println("Appium Service Address : - "+ appiumServiceUrl);
+			
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "350df4d27d42");
-
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
 		//capabilities.setCapability(CapabilityType.VERSION, "7.1.2");
 		capabilities.setCapability("platformName", "Android");
@@ -41,12 +32,11 @@ public class methods {
 		capabilities.setCapability("appPackage", "com.zoho.chat");
 		capabilities.setCapability("appActivity", "com.zoho.chat.ui.MyBaseActivity");
 		capabilities.setCapability("noReset", false);
-
-
 		driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-			
+		
+		
 		
   }
 }
