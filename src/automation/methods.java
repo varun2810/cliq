@@ -1,10 +1,13 @@
 package automation;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecuteResultHandler;
+import org.apache.commons.exec.DefaultExecutor;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
@@ -20,6 +23,37 @@ public class methods {
 	  
 	
 	@Test
+	public void startServer() {
+		CommandLine cmd = new CommandLine("/usr/local/bin/node");
+		cmd.addArgument("/usr/local/bin/appium");
+		cmd.addArgument("--address");
+		cmd.addArgument("127.0.0.1");
+		cmd.addArgument("--port");
+		cmd.addArgument("4723");
+		
+		DefaultExecuteResultHandler handler = new DefaultExecuteResultHandler();
+		DefaultExecutor executor = new DefaultExecutor();
+		executor.setExitValue(1);
+		try {
+		
+			executor.execute(cmd, handler);
+			Thread.sleep(10000);
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void stopServer() {
+		String[] command = { "/usr/bin/killall", "-KILL", "node" };
+		try {
+			Runtime.getRuntime().exec(command);
+			System.out.println("Appium server stopped.");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	public void installation() throws MalformedURLException {
 			
 		

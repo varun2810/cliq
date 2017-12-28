@@ -12,6 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Apptest1 {
@@ -19,12 +21,28 @@ public class Apptest1 {
 	static XSSFWorkbook workbook;
     static XSSFSheet sheet;
 	static XSSFCell cell;
-	static String URL = "http://www.google.com";  
+	 
 	static WebDriver driver;
 	
-	static File src=new File(".\\testdata\\Automation.xlsx");
+	static File src=new File("./testdata/Automation.xlsx");
 	
 	static methods obj = new methods();
+	
+
+	@BeforeClass
+	public void startServer() throws InterruptedException {
+		obj.startServer();
+		Thread.sleep(20000);
+		
+	}
+	
+	@AfterClass
+	public void stopServer() throws InterruptedException {
+		obj.stopServer();
+		Thread.sleep(2000);
+		
+	}
+	
 	
 	
 	
@@ -57,6 +75,7 @@ public class Apptest1 {
 					 
 					 switch(testcase) {
 					 
+		 				 
 					 case "App installation":
 							System.out.println("testcase : " + testcase);						
 							obj.installation();					
