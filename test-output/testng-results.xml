@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="36416" started-at="2017-12-28T09:18:07Z" finished-at="2017-12-28T09:18:43Z">
+  <suite name="Suite" duration-ms="32671" started-at="2017-12-29T05:58:13Z" finished-at="2017-12-29T05:58:45Z">
     <groups>
     </groups>
-    <test name="Automation" duration-ms="36416" started-at="2017-12-28T09:18:07Z" finished-at="2017-12-28T09:18:43Z">
+    <test name="Automation" duration-ms="32671" started-at="2017-12-29T05:58:13Z" finished-at="2017-12-29T05:58:45Z">
       <class name="automation.Apptest1">
-        <test-method status="PASS" signature="startServer()[pri:0, instance:automation.Apptest1@15b3e5b]" name="startServer" is-config="true" duration-ms="30015" started-at="2017-12-28T14:48:07Z" finished-at="2017-12-28T14:48:37Z">
+        <test-method status="PASS" signature="startServer()[pri:0, instance:automation.Apptest1@2d554825]" name="startServer" is-config="true" duration-ms="30015" started-at="2017-12-29T11:28:13Z" finished-at="2017-12-29T11:28:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startServer -->
-        <test-method status="PASS" signature="excel()[pri:0, instance:automation.Apptest1@15b3e5b]" name="excel" duration-ms="4379" started-at="2017-12-28T14:48:37Z" finished-at="2017-12-28T14:48:41Z">
+        <test-method status="PASS" signature="excel()[pri:0, instance:automation.Apptest1@2d554825]" name="excel" duration-ms="565" started-at="2017-12-29T11:28:43Z" finished-at="2017-12-29T11:28:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- excel -->
-        <test-method status="PASS" signature="stopServer()[pri:0, instance:automation.Apptest1@15b3e5b]" name="stopServer" is-config="true" duration-ms="2007" started-at="2017-12-28T14:48:41Z" finished-at="2017-12-28T14:48:43Z">
+        <test-method status="PASS" signature="stopServer()[pri:0, instance:automation.Apptest1@2d554825]" name="stopServer" is-config="true" duration-ms="2071" started-at="2017-12-29T11:28:43Z" finished-at="2017-12-29T11:28:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopServer -->
